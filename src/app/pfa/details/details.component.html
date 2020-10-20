@@ -1,0 +1,37 @@
+<div class="container mt-5">
+    <h2 class="text-center font-rubik mb-5">Pension Table</h2>
+    <table class="table table-bordered table-hover table-striped shadow-lg">
+        <thead class="">
+          <tr class="bg-danger text-white">
+            <th scope="col" class="align-middle">#</th>
+            <th scope="col" class="align-middle font-rale">Pension Fund <br> Administrator</th>
+            <th scope="col" class="align-middle font-rale">RSA</th>
+            <th scope="col" class="align-middle font-rale">Employee Name</th>
+            <th scope="col" colspan="3"><div class="text-center font-rale">Contribution</div>
+                <div class="d-flex justify-content-between mb-0">
+                    <th class="border-0 font-rale">Employee</th>
+                    <th class="border-0 font-rale" >Employer</th>
+                    <th class="border-0 font-rale">Volountary</th>
+                </div>
+            </th>
+            <th scope="col" class="align-middle font-rale">Total</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pf of pfas; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td class="font-baloo">{{pf.pfa}}</td>
+            <td class="font-baloo">{{pf.rsa}}</td>
+            <td class="font-baloo">{{pf.employeeName}}</td>
+            <td class="font-baloo">{{pf.employer}}</td>
+            <td class="font-baloo">{{pf.employee}}</td>
+            <td class="font-baloo">{{pf.volountary}}</td>
+            <td class="font-baloo">{{pf.employer + pf.employee + pf.volountary}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="text-right mt-5">
+          <button class="btn btn-danger font-baloo px-5" (click)="submit()">SUBMIT</button>
+      </div>
+</div>
