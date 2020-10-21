@@ -15,6 +15,7 @@ export class SummaryComponent implements OnInit {
   totalpayment: number;
   totalemployee: number;
   totalpfa: number;
+  account = '';
 
 
   pfas: Array<any>;
@@ -34,7 +35,9 @@ export class SummaryComponent implements OnInit {
 
   formSubmit(form: NgForm) {
     this.toastr.success('Payment Initiated Successfully!!!');
+    console.log(form);
     form.reset();
+    this.account = '';
   }
 
 // calculate total

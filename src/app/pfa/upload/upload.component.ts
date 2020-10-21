@@ -18,7 +18,7 @@ export class UploadComponent implements OnInit {
     this.createUploadForm();
   }
 
-  onSubmit(form: NgForm) {
+  onSubmit(form) {
     this.pfaservice.getFormValue(form.value);
     this.router.navigate(['/details']);
   }

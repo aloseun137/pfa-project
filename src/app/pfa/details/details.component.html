@@ -11,7 +11,7 @@
                 <div class="d-flex justify-content-between mb-0">
                     <th class="border-0 font-rale">Employee</th>
                     <th class="border-0 font-rale" >Employer</th>
-                    <th class="border-0 font-rale">Volountary</th>
+                    <th class="border-0 font-rale">Voluntary</th>
                 </div>
             </th>
             <th scope="col" class="align-middle font-rale">Total</th>
@@ -24,10 +24,10 @@
             <td class="font-baloo">{{pf.pfa}}</td>
             <td class="font-baloo">{{pf.rsa}}</td>
             <td class="font-baloo">{{pf.employeeName}}</td>
-            <td class="font-baloo">{{pf.employer}}</td>
-            <td class="font-baloo">{{pf.employee}}</td>
-            <td class="font-baloo">{{pf.volountary}}</td>
-            <td class="font-baloo">{{pf.employer + pf.employee + pf.volountary}}</td>
+            <td class="font-baloo">{{pf.employer|currency:"NGN":"&#8358;"}}</td>
+            <td class="font-baloo">{{pf.employee|currency:"NGN":"&#8358;"}}</td>
+            <td class="font-baloo">{{pf.volountary|currency:"NGN":"&#8358;"}}</td>
+            <td class="font-baloo">{{pf.employer + pf.employee + pf.volountary|currency:"NGN":"&#8358;"}}</td>
           </tr>
         </tbody>
       </table>

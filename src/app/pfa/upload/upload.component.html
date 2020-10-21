@@ -1,8 +1,8 @@
 <div class="wrapper">
     <form [formGroup]="uploadForm" class="form-signin p-4 shadow-lg" (ngSubmit)="onSubmit(uploadForm)">
         <div class="form-group mb-4">
-            <label for="exampleFormControlInput1" class="font-rubik font-size-20">Employee Code:</label>
-            <input type="text" class="form-control"  maxlength="20"  placeholder="Enter Employee code" formControlName="empcode"/>
+            <label for="exampleFormControlInput1" class="font-rubik font-size-20">Employer Code:</label>
+            <input type="text" class="form-control"  maxlength="20"  placeholder="Enter Employer code" formControlName="empcode"/>
         </div>
         <div class="form-group mb-4">
             <label for="exampleFormControlInput1" class="font-rubik font-size-20">Contribution Period:</label>
@@ -10,7 +10,7 @@
                 <div class="col">
                     <select class="form-control"  formControlName="month">
                         <option value=""  disabled selected > Month</option>
-                        <option value='Janaury'>Janaury</option>
+                        <option value='Janaury'>January</option>
                         <option value='February'>February</option>
                         <option value='March'>March</option>
                         <option value='April'>April</option>

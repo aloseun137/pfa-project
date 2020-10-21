@@ -18,11 +18,11 @@
             <td class="font-baloo">{{pf.pfa}}</td>
             <td class="font-baloo">{{formValue.month?formValue.month:'no value'}} {{formValue.year}}</td>
             <td class="font-baloo">{{pf.totalemployee}}</td>
-            <td class="font-baloo">{{pf.totalpayment}}</td>
+            <td class="font-baloo">{{pf.totalpayment|currency:"NGN":"&#8358;"}}</td>
             <td class="font-baloo">{{pf.transactionId}}</td>
           </tr>
           <tr>
-            <th  colspan="2" class="bg-danger text-white font-baloo">TOTAL PAYMENTS:<span class="float-right">{{totalpayment}}</span></th>
+            <th  colspan="2" class="bg-danger text-white font-baloo">TOTAL PAYMENTS:<span class="float-right">{{totalpayment|currency:"NGN":"&#8358;"}}</span></th>
           </tr>
           <tr>
             <th  colspan="2" class="bg-danger text-white font-baloo">TOTAL EMPLOYEE:<span class="float-right">{{totalemployee}}</span></th>
@@ -47,16 +47,24 @@
           </button>
         </div>
         <div class="modal-body">
-            <h2 class="font-rale text-center">Bank Details</h2>
+            <h3 class="font-rale text-center">Account Details</h3>
                 <form #bankDetails ="ngForm" class="form-signin p-4 m-b4" (ngSubmit)="formSubmit(bankDetails)">
                     <div class="form-group">
-                        <input required type="text" class="form-control" maxlength="15"  placeholder="Enter account name" name="accname" ngModel required />
-                    </div>
-                    <div class="form-group">
-                        <input required  type="text" class="form-control" maxlength="15"  placeholder="Enter account number" name="accnum" ngModel required />
-                    </div>
-                    <div class="form-group">
-                        <input required  type="text" class="form-control" maxlength="15"  placeholder="Enter bank name" name="bankname" ngModel required />
+                        <select class="form-control" [(ngModel)]='account' name="account" ngModel id="account">
+                            <option value="" disabled selected>--Select Account--</option>
+                            <optgroup label="Access Bank">
+                              <option value="volvo">Account Number | Account Name</option>
+                              <option value="saab">Account Number | Account Name</option>
+                            </optgroup>
+                            <optgroup label="Diamond Bank">
+                              <option value="mercedes">Account Number | Account Name</option>
+                              <option value="audi">Account Number | Account Name</option>
+                            </optgroup>
+                            <optgroup label="Eco Bank">
+                                <option value="mercedes">Account Number | Account Name</option>
+                                <option value="audi">Account Number | Account Name</option>
+                              </optgroup>
+                          </select>
                     </div>
 
                   <button id="btnSave" [disabled]="bankDetails.invalid" class="btn btn-lg btn-danger btn-block font-rubik" type="submit">Initiate Payment</button>
