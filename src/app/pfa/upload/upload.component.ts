@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PfaService } from '../pfa.service';
 
@@ -9,15 +9,25 @@ import { PfaService } from '../pfa.service';
   styleUrls: ['./upload.component.scss']
 })
 export class UploadComponent implements OnInit {
-  selectedValue;
-  selectedValue2;
+  uploadForm: FormGroup;
 
-  constructor(private router: Router, private pfaservice: PfaService) { }
+  constructor(private router: Router, private pfaservice: PfaService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.createUploadForm();
   }
 
-  onSubmit(form: NgForm, param: NgForm) {
-    this.router.navigate(['/details']);
+  onSubmit(form: NgForm) {
+    console.log(this.uploadForm.value);
+
+    // this.router.navigate(['/details']);
+  }
+  createUploadForm() {
+    this.uploadForm = this.fb.group({
+        empcode: [null, Validators.required],
+        month: ['', Validators.required],
+        year: ['', Validators.required],
+        file: [null],
+    });
   }
 }
