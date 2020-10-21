@@ -50,13 +50,13 @@
             <h2 class="font-rale text-center">Bank Details</h2>
                 <form #bankDetails ="ngForm" class="form-signin p-4 m-b4" (ngSubmit)="formSubmit(bankDetails)">
                     <div class="form-group">
-                        <input required type="text" class="form-control"  placeholder="Enter account name" name="accname" ngModel required />
+                        <input required type="text" class="form-control" maxlength="15"  placeholder="Enter account name" name="accname" ngModel required />
                     </div>
                     <div class="form-group">
-                        <input required  type="text" class="form-control"  placeholder="Enter account number" name="accnum" ngModel required />
+                        <input required  type="text" class="form-control" maxlength="15"  placeholder="Enter account number" name="accnum" ngModel required />
                     </div>
                     <div class="form-group">
-                        <input required  type="text" class="form-control"  placeholder="Enter bank name" name="bankname" ngModel required />
+                        <input required  type="text" class="form-control" maxlength="15"  placeholder="Enter bank name" name="bankname" ngModel required />
                     </div>
 
                   <button id="btnSave" [disabled]="bankDetails.invalid" class="btn btn-lg btn-danger btn-block font-rubik" type="submit">Initiate Payment</button>
