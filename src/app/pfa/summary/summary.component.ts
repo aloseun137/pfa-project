@@ -11,6 +11,7 @@ declare var $: any;
   styleUrls: ['./summary.component.scss']
 })
 export class SummaryComponent implements OnInit {
+  formValue: any = {month: '', year: ''};
   totalpayment: number;
   totalemployee: number;
   totalpfa: number;
@@ -21,6 +22,7 @@ export class SummaryComponent implements OnInit {
   constructor(private toastr: ToastrService, private pfaserve: PfaService ) { }
 
   ngOnInit(): void {
+    this.formValue = this.pfaserve.formValue;
     this.pfas = this.pfaserve.getPfasum();
     this.calculateTotal('totalpayment');
     this.calculateTotal('totalemployee');
@@ -33,7 +35,6 @@ export class SummaryComponent implements OnInit {
   formSubmit(form: NgForm) {
     this.toastr.success('Payment Initiated Successfully!!!');
     form.reset();
-    console.log('i worked');
   }
 
 // calculate total

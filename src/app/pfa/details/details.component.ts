@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PfaService } from '../pfa.service';
+import { Injectable } from '@angular/core';
 
 @Component({
   selector: 'app-details',
@@ -14,6 +15,7 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.pfas = this.pfaserve.getPfadetails();
+
 
   }
 

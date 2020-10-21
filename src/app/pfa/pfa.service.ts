@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PfaService {
+  public formValue = {};
   pfas: Array<any> = [
     {pfa: 'StanbicIBTC PFA', rsa: 'PEN100XXXX1', employeeName: 'Osibanj Yemi', employee: 800000, employer: 650000, volountary: 100000},
     {pfa: 'StanbicIBTC PFA', rsa: 'PEN100XXXX2', employeeName: 'Ajao Niyi', employee: 500000, employer: 250000, volountary: 0},
@@ -27,6 +28,11 @@ export class PfaService {
 
   getPfasum() {
     return this.pfassum;
+  }
+
+  getFormValue(param: object) {
+    this.formValue = param;
+
   }
 
 }

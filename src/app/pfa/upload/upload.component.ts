@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DetailsComponent } from '../details/details.component';
 import { PfaService } from '../pfa.service';
 
 @Component({
@@ -18,9 +19,8 @@ export class UploadComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(this.uploadForm.value);
-
-    // this.router.navigate(['/details']);
+    this.pfaservice.getFormValue(form.value);
+    this.router.navigate(['/details']);
   }
   createUploadForm() {
     this.uploadForm = this.fb.group({

@@ -16,7 +16,7 @@
           <tr *ngFor="let pf of pfas; let i = index">
             <th scope="row">{{i + 1}}</th>
             <td class="font-baloo">{{pf.pfa}}</td>
-            <td class="font-baloo">{{pf.scheduleperiod}}</td>
+            <td class="font-baloo">{{formValue.month?formValue.month:'no value'}} {{formValue.year}}</td>
             <td class="font-baloo">{{pf.totalemployee}}</td>
             <td class="font-baloo">{{pf.totalpayment}}</td>
             <td class="font-baloo">{{pf.transactionId}}</td>
